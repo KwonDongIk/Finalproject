@@ -94,3 +94,7 @@ html, body {
     margin-bottom: 100px;
     font-size: 16px;
 }
+
+.login-image img{
+    width: 100px;
+}
