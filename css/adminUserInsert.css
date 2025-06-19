@@ -5,11 +5,14 @@
     box-sizing: border-box;
 }
 
+:root{
+  --file-title-color: #999999;
+}
+
 .main-container{
   display: flex;
   margin: 25px;
   flex-direction: column;
-  justify-content: center;
 }
 
 .main-small-title{
@@ -23,14 +26,19 @@
   font-weight: bold;
 }
 
+.admin-user-sections{
+  display: flex;
+  gap: 40px;
+}
+
 .left-admin-user-info{
-  width: 50%;
+  width: 33%;
 }
 
 .user-info-title{
   font-weight: bold;
   font-size: 23px;
-  padding-top: 35px;
+  padding: 35px 0 10px 0;
 }
 
 .user-info-personal{
@@ -38,6 +46,81 @@
   flex-direction: column;
 }
 
+.user-info-detail {
+  margin-left: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.user-info-detail p, .input-container p {
+  text-align: left;
+  width: 100%;
+  font-size: 13px;
+  color: var(--file-title-color);
+  margin-top: 10px;
+  width: 200px;
+}
+
+.user-info-tag p:first-child{
+  margin-top: 10px;
+}
+
+.user-info-detail input {
+  width: 200px;
+  margin-left: 20px;
+}
+
+.user-info-detail select {
+  width: 200px;
+  height: 25px;
+  margin-left: 20px;
+}
+
+.user-info-detail #btnCan {
+  width: 100px;
+  height: 25px;
+}
+
+.user-info-detail #btnIns {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+}
+
+.user-info-detail button {
+  width: 30px;
+  height: 30px;
+}
+
+.user-info-detail input[type="file"] {
+  width:0; 
+  height:0;
+  padding:0;
+  overflow:"hidden"; 
+  border:0;
+}
+
+.file-upload-box{
+  width: 200px;
+  height: 130px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-upload-section{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
 .right-admin-user-info{
-  width: 50%;
+  width: 33%;
 }

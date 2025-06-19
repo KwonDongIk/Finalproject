@@ -15,30 +15,104 @@
     <div class="main-header-title">
       사용자 등록
     </div>
-    <div class="left-admin-user-info">
-      <div class="user-info-title">
-        기본 정보
+    <div class="admin-user-sections">
+      <div class="left-admin-user-info">
+        <div class="user-info-title">
+          기본 정보
+        </div>
+        <div class="user-info-personal">
+          <div class="user-info-detail">
+              <span>아이디</span>
+              <input type="text">
+          </div>
+          <div class="user-info-detail">
+              <span>비밀번호</span>
+              <input type="password">
+          </div>
+          <div class="user-info-detail">
+              <span>비밀번호 확인</span>
+              <input type="password">
+            <div class="user-info-tag">
+              <p> * 영문, 숫자, 특수문자 조합 </p>
+              <p> * 개인정보는 비밀번호에 사용불가해요. </p>
+            </div>
+          </div>
+          <div class="user-info-detail">
+              <span>이름</span>
+              <input type="text">
+          </div>
+          <div class="user-info-detail">
+              <span>사진</span>
+              <div class="input-container">
+                <div class="file-upload-box">
+                  <div class="file-upload-section">
+                    <input type="file" accept=".png" name="pfile" id="pfile">
+                    <label for="pfile">
+                      <img src="/images/account_circle.png" alt="사용자 사진">
+                    </label>
+                    <button id="btnCan">초기화</button>
+                  </div>
+                  <p>* 파일 지원 형식 : png</p>
+                </div>
+              </div>
+          </div>
+          <div class="user-info-detail">
+            <span>결재</span>
+            <div class="input-container">
+              <div class="file-upload-box">
+                <div class="file-upload-section">
+                  <input type="file" accept=".png" name="file" id="file">
+                  <label for="file">
+                    <img src="/images/Input_Inner.png" alt="사용자 결재 사진">
+                  </label>
+                  <button id="btnCan">초기화</button>
+                </div>
+                  <p>* 파일 지원 형식 : png</p>
+                </div>
+              </div>
+          </div>
+          <div class="user-info-detail">
+            <span>생년월일</span>
+            <input type="date">
+          </div>
+          <div class="user-info-detail">
+            <span>주소</span>
+            <input type="text">
+          </div>
+          <div class="user-info-detail">
+            <span>연락처</span>
+            <input type="tel">
+          </div>
+          <div class="user-info-detail">
+            <span>이메일</span>
+            <input type="email">
+          </div>
+        </div>
       </div>
-      <div class="user-info-personal">
-        아이디 <input type="text">
-        비밀번호 <input type="password">
-        비밀번호 확인 <input type="password">
-        이름 <input type="text">
-        사진 <input type="file"><button>초기화</button>
-            <input type="file">
-        생년월일 <input type="date">
-        주소 <input type="address">
-        연락처 <input type="tel">
-        이메일 <input type="email">
+      <div class="right-admin-user-info">
+        <div class="user-info-title">
+          조직 정보
+        </div>
+        <div class="user-info-personal">
+          <div class="user-info-detail">
+            <div class="user-info-detail">
+              <span>소속</span>
+              <button id="btnIns">+</button>  
+            </div>
+            <div class="user-info-detail">
+              <span>직급</span>
+                  <select name="rank">
+                    <option value="" selected disabled hidden>직급을 선택해주세요.</option>
+                    <option value="CEO">사장</option>
+                  </select>
+            </div>
+            <div class="user-info-detail">
+              <sapn>사번</sapn>
+              <input type="text">
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="right-admin-user-info">
-      <div class="user-info-title">
-        조직 정보
-      </div>
-    </div>
-    <div class="right-admin-user-info">
-
     </div>
   </div>
 </body>
