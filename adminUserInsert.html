@@ -38,8 +38,7 @@
               <span>비밀번호 확인</span>
               <input type="password" class="border border-gray-300 rounded-sm">
               <div class="user-info-tag">
-                <p> * 영문, 숫자, 특수문자 조합 </p>
-                <p> * 개인정보는 비밀번호에 사용불가해요. </p>
+                <p> * 8자 이내로 만들어주세요. </p>
               </div>
           </div>
           <div class="user-info-detail">
@@ -52,9 +51,12 @@
                 <div class="file-upload-box">
                   <div class="file-upload-section">
                     <input type="file" accept=".png" name="pfile" id="pfile">
-                    <label for="pfile">
-                      <img src="/images/account_circle.png" class="cursor-pointer" alt="사용자 사진">
+                    <label for="pfile"> <!--프로필 파일-->
+                      <img src="/images/account_circle.png" class="cursor-pointer pImage" id="ppreviewImage" style="width: 100px; height: 100px;" alt="사용자 사진">
                     </label>
+                    <div class="image-preview">
+                      <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
+                    </div>
                     <button id="btnCan1" class="border rounded-sm cursor-pointer">초기화</button>
                   </div>
                   <p>* 파일 지원 형식 : png</p>
@@ -66,10 +68,13 @@
             <div class="input-container">
               <div class="file-upload-box">
                 <div class="file-upload-section">
-                  <input type="file" accept=".png" name="file" id="file">
-                  <label for="file">
-                    <img src="/images/Input_Inner.png" class="cursor-pointer" alt="사용자 결재 사진">
+                  <input type="file" accept=".png" name="sfile" id="sfile">
+                  <label for="sfile"> <!--결재 파일-->
+                    <img src="/images/Input_Inner.png" class="cursor-pointer sImage" id="spreviewImage" style="width: 100px; height: 100px;" alt="사용자 결재 사진">
                   </label>
+                  <div class="image-preview">
+                      <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
+                  </div>
                   <button id="btnCan2" class="border rounded-sm cursor-pointer">초기화</button>
                 </div>
                   <p>* 파일 지원 형식 : png</p>
@@ -124,7 +129,7 @@
 
   <!-- 소속 추가 모달 -->
   <!-- 배경 -->
-  <div class="fixed inset-0 bg-transparent flex items-center justify-center z-50 hidden" id="modal">
+  <div class="fixed inset-0 bg-transparent flex items-center justify-center z-50 hidden modal-title" id="modal">
     <!-- 모달 본체 -->
     <div class="border rounded-sm bg-white modal-padding shadow-lg max-w-2xl w-full">
       <div class="flex justify-between items-center mb-6">
@@ -159,6 +164,13 @@
       </div>
     </div>
   </div>
+
+  <div class="alert-modal">
+    <div class="alert-modal-info">
+      <div class="pb-7 text-xl">소속을 다시 선택해주세요.</div>
+      <button type="button" class="bg-black text-white px-6 py-2 rounded cursor-pointer hover:bg-gray-800 text-base btnOK">확인</button>
+    </div>
+  </div>
 </body>
 <script>
 
@@ -170,6 +182,11 @@
   const searchInput = document.getElementById("search-input"); // 검색 입력창
   const departmentList = document.getElementById("department-list"); // 소속 목록
   const selectedDepartment = document.getElementById("selectedDepartment"); // 선택된 소속 표시창
+  const alertModal = document.querySelector(".alert-modal");
+  const btnOK = document.querySelector(".btnOK");
+  const btnCan1 = document.getElementById("btnCan1");
+  const btnCan2 = document.getElementById("btnCan2");
+
 
   const departments = [
     "임원",
@@ -218,8 +235,13 @@
       selectedDepartment.value = currentSelectedDepartment;
       closeModal();
     } else {
-      alert("소속을 선택해주세요.");
+      //alert("소속을 선택해주세요.");
+      alertModal.style.display = 'block';
     }
+  })
+
+  btnOK.addEventListener("click", () => {
+    alertModal.style.display = 'none';
   })
 
   function searchDepartments() {
@@ -257,5 +279,61 @@
 
   searchInput.addEventListener("input", searchDepartments);
   document.getElementById("modal-search").addEventListener("click", searchDepartments);
+
+  const pimageFile = document.getElementById('pfile'); // 프로필 사진 이미지 라벨
+  const simageFile = document.getElementById('sfile'); // 결재 사진 이미지 라벨
+  const pimagePreview = document.getElementById('ppreviewImage'); // 프로필 사진 미리보기
+  const simagePreview = document.getElementById('spreviewImage'); // 결재 사진 미리보기
+  const pImage = document.querySelector(".pImage");
+  const sImage = document.querySelector(".sImage");
+
+  // 각 사진 이미지 미리보기
+  pimageFile.addEventListener('change', function(event){
+    const file1 = event.target.files[0];
+
+    if(file1){
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        pimagePreview.src = e.target.result;
+        pimagePreview.style.display = 'block';
+      }
+
+      reader.readAsDataURL(file1);
+    } else {
+      pimagePreview.style.display = 'none';
+    }
+  })
+
+  simageFile.addEventListener('change', function(event){
+    const file2 = event.target.files[0];
+
+    if(file2){
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        simagePreview.src = e.target.result;
+        simagePreview.style.display = 'block';
+      }
+
+      reader.readAsDataURL(file2);
+    } else {
+      simagePreview.style.display = 'none';
+    }
+  })
+
+  // 프로필 사진, 결재 이미지 초기화 버튼
+  btnCan1.addEventListener("click", () => {
+
+    pImage.src = "/images/account_circle.png";
+
+  })
+
+  btnCan2.addEventListener("click", () => {
+
+    sImage.src = "/images/Input_Inner.png";
+
+  })
+
 </script>
 </html>
