@@ -1,23 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[관리자모드] 조직 관리 - 조직 현황</title>
+  <link rel="stylesheet" href="css/adminDeptManagement.css"><!--CSS-->
+  <link rel="icon" href="/images/egowaeyofavicon.png"><!--파비콘-->
+  <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>tailwindcss cdn -->
 </head>
-<body>
 
-  <div class="main-container flex ">
+<body>
+  <div class="main-container d-flex m-4 flex-column">
     <div class="main-first-section">
-      <div class="main-small-title">
+      <div class="main-small-title d-bolck pb-4">
         조직 관리
       </div>
+      <div class="main-header-title fs-3 fw-bold pb-5">
+        조직 현황
+      </div>
     </div>
-    <div class="main-header-title">
-      조직 현황
+    <div class="main-second-section d-flex justify-content-between flex-row pb-4">
+      <div class="button-section">
+        <button class="border border-dark px-3 rounded-2">부서추가</button>
+        <button class="border border-dark px-3 rounded-2">부서이동</button>
+        <button class="border border-dark px-3 rounded-2">부서삭제</button>
+      </div>
+      <div>
+        <div class="input-group">
+          <div class="search-section input-group-text">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              전체
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="#">이름</a></li>
+              <li><a class="dropdown-item" href="#">아이디</a></li>
+              <li><a class="dropdown-item" href="#">소속부서</a></li>
+              <li><a class="dropdown-item" href="#">직급</a></li>
+              <li><a class="dropdown-item" href="#">사번</a></li>
+              <li><a class="dropdown-item" href="#">내선번호</a></li>
+              <li><a class="dropdown-item" href="#">휴대폰</a></li>
+            </ul>
+          <!-- 검색창 -->
+          <input type="text" class="" placeholder="검색" id="search-input">
+          </div>
+          <button class="border cursor-pointer" id="modal-search">
+            <img src="/images/search.png" alt="검색">
+          </button>
+        </div>
+      </div>
     </div>
+    <div class="main-tf-section d-flex flex-row">
+      <div class="main-third-section me-5">
+        <div class="search-section">
+          <!-- 검색창 -->
+          <input type="text" class="" placeholder="검색" id="search-input">
+          <button class="cursor-pointer border border-0 ps-3" id="modal-search">
+            <img src="/images/search.png" alt="검색">
+          </button>
+        </div>
+        <div class="dept-list-section pt-3">
+          <!-- 부서 리스트 목록 -->
+          <div class="">
+            <ul class="list-group list-group-flush" id="department-list">
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="임원">임원</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="인사팀">인사팀</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="재무팀">재무팀</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="개발팀">개발팀</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="품질보증팀">품질보증팀</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="기획팀">기획팀</li>
+              <li class="p-2 dept-hover rounded-2" role="button" data-dept="영업팀">영업팀</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="main-fourth-section flex-fill">
+        <div class="dept-people-section">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class=""><input type="checkbox"></th>
+                <th class="">이름</th>
+                <th class="">아이디</th>
+                <th class="">소속부서</th>
+                <th class="">직급</th>
+                <th class="">사번</th>
+                <th class="">내선번호</th>
+                <th class="">휴대폰</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="py-3"><input type="checkbox"></td>
+                <td class="py-3">김민지</td>
+                <td class="py-3">KimMinJi</td>
+                <td class="py-3">보안팀</td>
+                <td class="py-3">보안팀장</td>
+                <td class="py-3">250000</td>
+                <td class="py-3">4681</td>
+                <td class="py-3">010-0000-0000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-  
+  </div>
 </body>
+<script>
+  const nav = document.querySelector('.nav-link');
+
+  
+
+</script>
+
 </html>
