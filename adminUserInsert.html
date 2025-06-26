@@ -148,13 +148,13 @@
       
       <div class="border border-gray-300 rounded-sm p-4 mb-6 min-h-[200px] bg-gray-50">
         <ul class="space-y-2" id="department-list">
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="임원">• 임원</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="인사팀">• 인사팀</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="재무팀">• 재무팀</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="개발팀">• 개발팀</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="품질보증팀">• 품질보증팀</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="기획팀">• 기획팀</li>
-          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="영업팀">• 영업팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="임원">임원</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="인사팀">인사팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="재무팀">재무팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="개발팀">개발팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="품질보증팀">품질보증팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="기획팀">기획팀</li>
+          <li class="p-2 hover:bg-gray-300 cursor-pointer rounded" data-dept="영업팀">영업팀</li>
         </ul>
       </div>
       
@@ -272,7 +272,7 @@
       const li = document.createElement("li");
       li.className = "p-2 hover:bg-gray-300 cursor-pointer rounded";
       li.setAttribute("data-dept", dept);
-      li.textContent = `• ${dept}`;
+      li.textContent = `${dept}`;
       departmentList.appendChild(li);
     });
   }

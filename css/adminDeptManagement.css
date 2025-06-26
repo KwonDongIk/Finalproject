@@ -5,7 +5,14 @@ body {
     box-sizing: border-box;
 }
 
+/* list-style-type: none; */
+
+.dept-selected{
+  background-color: #8ec5ff !important;
+}
+
+
 .dept-hover:hover{
-  background-color: #cccccc;
+  background-color: #d1d5dc;
   cursor: pointer;
 }
