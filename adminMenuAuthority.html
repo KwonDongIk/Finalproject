@@ -29,6 +29,10 @@
     padding-left: 10px;
   }
 
+  .tree ul li {
+    padding-top: 10px;
+  }
+
   .tree *:before {
     width: 15px;
     height: 15px;
@@ -40,6 +44,10 @@
     font-family: NotoSansKrMedium, sans-serif !important;
     font-size: 14px;
     color: #000000;
+  }
+
+  .tree label {
+    font-size: 16px;
   }
 
   .tree label:hover {
@@ -103,15 +111,19 @@
       </div>
     </div>
     <div class="main-stff-section d-flex flex-row flex-fill">
-      <div class="main-stf-section ms-0">
-        <div class="main-second-section-height" style="height: 300px; width: 600px;">
-          <div class="main-second-section border border-dark rounded-3 overflow-auto h-100 w-75 p-2 flex-fill">
-            <div class="sticky-top d-flex justify-content-between">
+      <div class="main-stf-section d-flex flex-column" style="width: 600px;">
+        <div class="main-second-section-height mb-3" style="height: 300px;">
+          <div class="main-second-section border border-dark rounded-3 overflow-auto h-100 p-2">
+            <div class="sticky-top d-flex justify-content-between mb-2">
               <!-- 검색창 -->
               <input type="text" class="form-control border border-dark" placeholder="검색" id="all-search-input">
               <!-- id 값 중복 불가 'search-input' -> 'all-search-input' 으로 변경 -->
               <button class="border-0 cursor-pointer ms-2" id="modal-search">
-                <img src="/images/search.png" alt="검색">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
               </button>
             </div>
             <ul class="tree">
@@ -123,12 +135,16 @@
                     <input type="checkbox" id="node1">
                     <label for="node1">임원</label>
                     <ul>
-                      <input type="checkbox" id="node11">
-                      <label for="node11" class="lastTree">사장 임성욱</label>
+                      <li>
+                        <input type="checkbox" id="node11">
+                        <label for="node11" class="lastTree">사장 임성욱</label>
+                      </li>
                     </ul>
                     <ul>
-                      <input type="checkbox" id="node12">
-                      <label for="node12" class="lastTree">부사장 정상윤</label>
+                      <li>
+                        <input type="checkbox" id="node12">
+                        <label for="node12" class="lastTree">부사장 정상윤</label>
+                      </li>
                     </ul>
                   </li>
                   <li>
@@ -309,15 +325,15 @@
                 </ul>
           </div>
         </div>
-        <div class="main-third-section flex-fill">
-          <div class="third-button d-flex justify-content-center py-5 gap-3 w-75">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down"
+        <div class="main-third-section mb-3">
+          <div class="third-button d-flex justify-content-center py-3 gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down"
               viewBox="0 0 16 16">
               <path fill-rule="evenodd"
                 d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
             </svg>
             <button class="border border-dark px-4 py-2 rounded-2 bg-dark text-white border-0">추가</button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up"
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up"
               viewBox="0 0 16 16">
               <path fill-rule="evenodd"
                 d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
@@ -326,151 +342,87 @@
           </div>
         </div>
         <!--추가, 삭제 버튼 그룹-->
-        <div class="main-fourth-section flex-fill">
-          <div style="height: 300px;">
-            <div class="main-second-section border border-dark rounded-3 overflow-auto h-100 w-75 p-2">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th class=""><input type="checkbox"></th>
-                    <th class="">소속부서</th>
-                    <th class="">직급</th>
-                    <th class="">이름</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="py-3"><input type="checkbox"></td>
-                    <td class="py-3">보안팀</td>
-                    <td class="py-3">보안팀장</td>
-                    <td class="py-3">김민지</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-     <!--권한 추가할 전사 박스-->
-      <div class="main-fifth-section d-flex flex-fill">
-        <div class="w-100 h-100 d-flex flex-column">
-          <div class="border border-dark rounded-3 overflow-auto p-2 flex-fill">
-            <table class="table table-striped table-hover">
-              <thead class="table-dark sticky-top">
+        <div class="main-fourth-section d-flex flex-column flex-fill">
+          <div class="border border-dark rounded-3 overflow-auto p-2" style="height: 300px;">
+            <table class="table table-sm mb-0">
+              <thead class="table-light sticky-top">
                 <tr>
                   <th class=""><input type="checkbox"></th>
-                  <th class="">이름</th>
-                  <th class="">아이디</th>
                   <th class="">소속부서</th>
                   <th class="">직급</th>
-                  <th class="">사번</th>
-                  <th class="">내선번호</th>
-                  <th class="">휴대폰</th>
-                  <th class="">계정상태</th>
+                  <th class="">이름</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">김민지</td>
-                  <td class="py-3">KimMinJi</td>
                   <td class="py-3">보안팀</td>
                   <td class="py-3">보안팀장</td>
-                  <td class="py-3">250000</td>
-                  <td class="py-3">4681</td>
-                  <td class="py-3">010-0000-0000</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">김민지</td>
                 </tr>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">남재현</td>
-                  <td class="py-3">NamJaeHyun</td>
                   <td class="py-3">보안팀</td>
-                  <td class="py-3">대리</td>
-                  <td class="py-3">250001</td>
-                  <td class="py-3">4682</td>
-                  <td class="py-3">010-1111-1111</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">보안팀장</td>
+                  <td class="py-3">김민지</td>
                 </tr>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">문시은</td>
-                  <td class="py-3">MoonSiEun</td>
                   <td class="py-3">보안팀</td>
-                  <td class="py-3">사원</td>
-                  <td class="py-3">250002</td>
-                  <td class="py-3">4683</td>
-                  <td class="py-3">010-2222-2222</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">보안팀장</td>
+                  <td class="py-3">김민지</td>
                 </tr>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">최유나</td>
-                  <td class="py-3">ChoiYuNa</td>
-                  <td class="py-3">개발팀</td>
-                  <td class="py-3">개발팀장</td>
-                  <td class="py-3">240000</td>
-                  <td class="py-3">4684</td>
-                  <td class="py-3">010-3333-3333</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">보안팀</td>
+                  <td class="py-3">보안팀장</td>
+                  <td class="py-3">김민지</td>
                 </tr>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">정하준</td>
-                  <td class="py-3">JungHaJun</td>
-                  <td class="py-3">개발팀</td>
-                  <td class="py-3">대리</td>
-                  <td class="py-3">240001</td>
-                  <td class="py-3">4685</td>
-                  <td class="py-3">010-4444-4444</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">보안팀</td>
+                  <td class="py-3">보안팀장</td>
+                  <td class="py-3">김민지</td>
                 </tr>
                 <tr>
                   <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">송지원</td>
-                  <td class="py-3">SongJiWon</td>
-                  <td class="py-3">개발팀</td>
-                  <td class="py-3">사원</td>
-                  <td class="py-3">240002</td>
-                  <td class="py-3">4686</td>
-                  <td class="py-3">010-5555-5555</td>
-                  <td class="py-3">정상</td>
-                </tr>
-                <tr>
-                  <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">김민준</td>
-                  <td class="py-3">KimMinJun</td>
-                  <td class="py-3">재무팀</td>
-                  <td class="py-3">재무팀장</td>
-                  <td class="py-3">230000</td>
-                  <td class="py-3">4687</td>
-                  <td class="py-3">010-6666-6666</td>
-                  <td class="py-3">정상</td>
-                </tr>
-                <tr>
-                  <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">박서아</td>
-                  <td class="py-3">ParkSeoA</td>
-                  <td class="py-3">재무팀</td>
-                  <td class="py-3">대리</td>
-                  <td class="py-3">230001</td>
-                  <td class="py-3">4688</td>
-                  <td class="py-3">010-7777-7777</td>
-                  <td class="py-3">정상</td>
-                </tr>
-                <tr>
-                  <td class="py-3"><input type="checkbox"></td>
-                  <td class="py-3">이도현</td>
-                  <td class="py-3">LeeDoHyun</td>
-                  <td class="py-3">재무팀</td>
-                  <td class="py-3">사원</td>
-                  <td class="py-3">230002</td>
-                  <td class="py-3">4689</td>
-                  <td class="py-3">010-8888-8888</td>
-                  <td class="py-3">정상</td>
+                  <td class="py-3">보안팀</td>
+                  <td class="py-3">보안팀장</td>
+                  <td class="py-3">김민지</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+      <!--권한 추가할 전사 박스-->
+      <div class="main-fifth-section d-flex flex-fill ms-3">
+        <div class="w-100 h-100 d-flex flex-column">
+          <div class="border border-dark rounded-3 overflow-auto p-4 flex-fill">
+            <div class="main-management-section pb-5">
+              <div class="management-title fs-3 fw-bold pb-4">
+                기본 관리자(모든 권한)
+              </div>
+              <input type="checkbox" id="all-manage">
+              <label for="all-manage">모든 관리 권한 부여</label>
+            </div>
+            <div class="detail-management-section">
+              <div class="detail-management-title fs-3 fw-bold pb-4">
+                권한 설정
+              </div>
+              <input type="checkbox" id="detail-manage">
+              <label for="detail-manage">일정</label>
+              <div class="ms-5 mt-3">
+                <div class="detail-checkbox gap-3">
+                  <input type="checkbox" id="detail-manage">
+                  <label for="detail-manage">일정</label>
+                  <input type="checkbox" id="detail-manage">
+                  <label for="detail-manage">일정</label>
+                  <input type="checkbox" id="detail-manage">
+                  <label for="detail-manage">일정</label>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
