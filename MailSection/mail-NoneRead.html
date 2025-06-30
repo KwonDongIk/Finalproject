@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[메일] 읽지 않은 메일</title>
+  <link rel="stylesheet" href="/css/mail-NoneRead.css">
+  <!--CSS-->
+  <link rel="icon" href="/images/egowaeyofavicon.png">
+  <!--파비콘-->
+  <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+    <!-- TUI Grid JavaScript -->
+  <script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+  <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+</head>
+
+<body>
+  <div class="main-container d-flex m-4 flex-row">
+    <div class="main-first-section border-end border-1 d-flex flex-column" style="width: 300px; height: auto;">
+      <div class="first-mail-button d-flex gap-3 p-3 justify-content-center">
+        <button class="border border-dark px-4 py-2 rounded-2 bg-dark text-white border-1">메일쓰기</button>
+        <button class="border border-dark px-4 py-2 rounded-2 bg-white text-dark border-1">내게쓰기</button>
+      </div>
+      <ol class="list-group list-group-item mb-5 border-0">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            읽지 않은 메일
+          </div>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            중요
+          </div>
+          <span class="badge bg-primary rounded-pill">1</span>
+        </li>
+      </ol>
+      <ol class="list-group list-group-item mb-5 border-0">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            전체 메일
+          </div>
+          <span class="badge bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            받은 메일함
+          </div>
+          <span class="badge bg-primary rounded-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            내게 쓴 메일함
+          </div>
+          <span class="badge bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            보낸 메일함
+          </div>
+          <span class="badge bg-primary rounded-pill"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+          <div class="ms-0 me-auto fw-bold">
+            임시 보관함
+          </div>
+          <span class="badge bg-primary rounded-pill"></span>
+        </li>
+      </ol>
+      <ol class="list-group list-group-item mb-5 border-0">
+        <li class="list-group-item d-flex justify-content-between align-items-start border-0 mail-hover rounded-3" role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+          </svg>  
+          <div class="ms-3 me-auto fw-bold">
+            휴지통
+          </div>
+          <span class="badge bg-primary rounded-pill"></span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="second-section m-3 ms-5 flex-fill">
+      <div class="fw-bold fs-3 mb-3">
+        읽지 않은 메일
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center gap-3">
+          <input type="checkbox">
+          <div>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">삭제</button>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">스팸</button>
+          </div>
+          <div>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">답장</button>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">전체 답장</button>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">전달</button>
+          </div>
+          <div>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">이동</button>
+            <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">추가 기능</button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <!-- 검색창 -->
+          <input type="text" class="border border-dark px-3 py-1 rounded-3" placeholder="검색" id="all-search-input">
+          <!-- id 값 중복 불가 'search-input' -> 'all-search-input' 으로 변경 -->
+          <button class="border-0 cursor-pointer ms-2" id="modal-search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="grid"></div>
+    </div>
+  </div>
+
+  <script>
+    const gridData = [
+      {
+        artist: '김민지',
+        name: '보안팀장입니다. 사내 보안 감사공문 발송 건',
+        date: '25-06-01 13:13',
+        size: '5.22KB'
+      },
+      {
+        artist: '임선아',
+        name: '재무팀 250529 영수증 처리건 안내',
+        date: '25-06-01 13:13',
+        size: '5.22KB'
+      }
+    ];
+
+    class CustomTextEditor {
+        constructor(props) {
+          const el = document.createElement('input');
+          const { maxLength } = props.columnInfo.editor.options;
+  
+          el.type = 'text';
+          el.maxLength = maxLength;
+          el.value = String(props.value);
+  
+          this.el = el;
+        }
+  
+        getElement() {
+          return this.el;
+        }
+  
+        getValue() {
+          return this.el.value;
+        }
+  
+        mounted() {
+          this.el.select();
+        }
+      }
+  
+      const grid = new tui.Grid({
+        el: document.getElementById('grid'),
+        scrollX: false,
+        scrollY: false,
+        rowHeaders: ['checkbox'],
+        headerHeight: 0,
+        columns: [
+          {
+            header: '',
+            name: 'artist',
+            editor: {
+              type: CustomTextEditor,
+              options: {
+                maxLength: 10
+              }
+            }
+          },
+          {
+            header: '',
+            name: 'name',
+            editor: 'text',
+            width: 900,
+          },
+          {
+            header: '',
+            name: 'date',
+            editor: 'text',
+            width: 200,
+          },
+          {
+            header: '',
+            name: 'size',
+            editor: 'text',
+            width: 150,
+          },
+        ]
+      });
+      grid.on('beforeChange', ev => {
+        console.log('before change:', ev);
+      });
+      grid.on('afterChange', ev => {
+        console.log('after change:', ev);
+      })
+      grid.resetData(gridData);
+  </script>
+</body>
+
+
+</html>
