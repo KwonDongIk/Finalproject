@@ -1,6 +1,6 @@
 .mail-hover:hover{
-  background-color: #d1d5dc;
-  cursor: pointer;
+  background-color: #d1d5dc !important;
+  cursor: pointer !important;
 }
 
 /* TUI Grid 헤더 완전히 숨기기 */
@@ -15,3 +15,40 @@
 .tui-grid-body-area {
   height: auto !important;
 }
+
+.mail-hover:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 16px;
+}
+
+.star-btn:hover {
+  transform: scale(1.1);
+}
+
+.mail-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+
+.unread-mail {
+  font-weight: bold;
+}
+
+.read-mail {
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+.text-right {
+  text-align: right;
+}
+

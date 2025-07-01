@@ -1,0 +1,15 @@
+.mail-hover:hover{
+  background-color: #d1d5dc !important;
+  cursor: pointer !important;
+}
+
+.attached-person input{
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  border-bottom: 3px solid #999 !important;
+}
+
+.attached-person input:focus{
+    border-color: #000 !important;
+}

@@ -129,16 +129,22 @@
   <script>
     const gridData = [
       {
-        artist: '김민지',
-        name: '보안팀장입니다. 사내 보안 감사공문 발송 건',
-        date: '25-06-01 13:13',
-        size: '5.22KB'
+        id: 1,
+          artist: '김민지',
+          name: '보안팀장입니다. 사내 보안 감사공문 발송 건',
+          date: '25-06-01 13:13',
+          size: '5.22KB',
+        isStarred: false,
+        isRead: false,  
       },
       {
+        id: 2,
         artist: '임선아',
         name: '재무팀 250529 영수증 처리건 안내',
         date: '25-06-01 13:13',
-        size: '5.22KB'
+        size: '5.22KB',
+        isStarred: false,
+        isRead: false,
       }
     ];
 
@@ -166,7 +172,23 @@
           this.el.select();
         }
       }
-  
+
+      // 별 토글 함수
+      function toggleStar(rowKey){
+        const rowData = grid.getRow(rowKey);
+        const newStarred = !rowData.isStarred;
+        grid.setValue(rowKey, 'isStarred', newStarred);
+      }
+
+      // 읽음 상태 토글 함수
+      function toggleReadStatus(rowKey){
+        const rowData = grid.getRow(rowKey);
+        if(!rowData.isRead){ // 조건문이 false라면 실행 안되미
+          const newReadStatus = !rowData.isRead;
+          grid.setValue(rowKey, 'isRead', newReadStatus);
+        }
+      }
+
       const grid = new tui.Grid({
         el: document.getElementById('grid'),
         scrollX: false,
@@ -176,32 +198,86 @@
         columns: [
           {
             header: '',
+            name: 'star',
+            width: 30,
+            align: 'center',
+            formatter: function(value, rowData) {
+              const starIcon = value.row.isStarred 
+                ? '⭐' 
+                : '☆';
+              return `<button class="star-btn">${starIcon}</button>`;
+            }
+          },
+          {
+            header: '',
+            name: 'mailIcon',
+            width: 30,
+            align: 'center',
+            formatter: function(value, rowData) {
+              const iconSvg = value.row.isRead 
+                ? `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open mail-icon" viewBox="0 0 16 16">
+                     <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.167V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z"/>
+                   </svg>`
+                : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope mail-icon" viewBox="0 0 16 16">
+                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                   </svg>`;
+              return `<span style="cursor: pointer;" onclick="toggleReadStatus(${value.row.rowKey})">${iconSvg}</span>`;
+            }
+          },
+          {
+            header: '',
             name: 'artist',
-            editor: {
-              type: CustomTextEditor,
-              options: {
-                maxLength: 10
-              }
+            width: 120,
+            align: 'center',
+            formatter: function(value, rowData) {
+              const className = value.row.isRead ? 'read-mail' : 'unread-mail';
+              return `<span class="${className}">${value.row.artist}</span>`;
             }
           },
           {
             header: '',
             name: 'name',
-            editor: 'text',
-            width: 900,
+            width: 700,
+            formatter: function(value, rowData) {
+              const className = value.row.isRead ? 'read-mail' : 'unread-mail';
+              return `<span class="${className}">${value.row.name}</span>`;
+            }
           },
           {
             header: '',
             name: 'date',
-            editor: 'text',
-            width: 200,
+            width: 150,
+            align: 'right',
+            formatter: function(value, rowData) {
+              const className = value.row.isRead ? 'read-mail' : 'unread-mail';
+              return `<span class="${className}">${value.row.date}</span>`;
+            }
           },
           {
             header: '',
             name: 'size',
-            editor: 'text',
-            width: 150,
+            width: 100,
+            align: 'right',
+            formatter: function(value, rowData) {
+              const className = value.row.isRead ? 'read-mail' : 'unread-mail';
+              return `<span class="${className}">${value.row.size}</span>`;
+            }
           },
+          {
+            header: '',
+            name: 'isStarred',
+            hidden: true
+          },
+          {
+            header: '',
+            name: 'isRead',
+            hidden: true
+          },
+          {
+            header: '',
+            name: 'id',
+            hidden: true
+          }
         ]
       });
       grid.on('beforeChange', ev => {
@@ -209,8 +285,19 @@
       });
       grid.on('afterChange', ev => {
         console.log('after change:', ev);
+        grid.refreshLayout();
       })
       grid.resetData(gridData);
+
+      grid.on('click', ev => {
+        if(ev.columnName === 'star'){
+          toggleStar(ev.rowKey)
+        }
+
+        if(ev.columnName === 'name'){
+          toggleReadStatus(ev.rowKey)
+        }
+      })
   </script>
 </body>
 
