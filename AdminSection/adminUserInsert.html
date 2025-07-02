@@ -28,7 +28,7 @@
         <div class="user-info-personal">
           <div class="user-info-detail">
               <span>아이디</span>
-              <input type="text" class="border border-gray-400 rounded-sm">
+              <input type="text" class="border border-gray-300 rounded-sm">
           </div>
           <div class="user-info-detail">
               <span>비밀번호</span>
@@ -53,10 +53,7 @@
                     <input type="file" accept=".png" name="pfile" id="pfile">
                     <label for="pfile"> <!--프로필 파일-->
                       <!-- <img src="/images/account_circle.png" class="cursor-pointer pImage" id="ppreviewImage" style="width: 130px; height: 100px;" alt="사용자 사진"> -->
-                      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                        <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                        <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
-                      </svg>
+                      <img src="/images/account_circle.svg" class="cursor-pointer pImage" id="ppreviewImage" style="width: 130px; height: 100px;" alt="사용자 사진">
                     </label>
                     <div class="image-preview">
                       <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
@@ -290,6 +287,7 @@
   const simagePreview = document.getElementById('spreviewImage'); // 결재 사진 미리보기
   const pImage = document.querySelector(".pImage");
   const sImage = document.querySelector(".sImage");
+  const bi = document.querySelector(".bi");
 
   // 각 사진 이미지 미리보기
   pimageFile.addEventListener('change', function(event){
@@ -329,7 +327,7 @@
   // 프로필 사진, 결재 이미지 초기화 버튼
   btnCan1.addEventListener("click", () => {
 
-    pImage.src = "/images/account_circle.png";
+    pImage.src = "/images/account_circle.svg";
 
   })
 

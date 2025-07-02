@@ -170,3 +170,7 @@ body {
   align-items: center;
   text-align: center;
 }
+
+.bi {
+  cursor: pointer;
+}
