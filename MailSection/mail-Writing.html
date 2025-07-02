@@ -10,15 +10,15 @@
   <link rel="icon" href="/images/egowaeyofavicon.png">
   <!--파비콘-->
   <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
-    <!-- TUI Grid JavaScript -->
+  <!-- TUI Grid JavaScript -->
   <script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
-  <script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 </head>
 
 <body>
@@ -29,13 +29,15 @@
         <button class="border border-dark px-4 py-2 rounded-2 bg-white text-dark border-1">내게쓰기</button>
       </div>
       <ol class="list-group list-group-item mb-5 border-0">
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             읽지 않은 메일
           </div>
           <span class="badge bg-primary rounded-pill">2</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             중요
           </div>
@@ -43,31 +45,36 @@
         </li>
       </ol>
       <ol class="list-group list-group-item mb-5 border-0">
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             전체 메일
           </div>
           <span class="badge bg-primary rounded-pill"></span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             받은 메일함
           </div>
           <span class="badge bg-primary rounded-pill">2</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             내게 쓴 메일함
           </div>
           <span class="badge bg-primary rounded-pill"></span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             보낸 메일함
           </div>
           <span class="badge bg-primary rounded-pill"></span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3" role="button">
+        <li class="list-group-item d-flex justify-content-between align-items-start mb-3 border-0 mail-hover rounded-3"
+          role="button">
           <div class="ms-0 me-auto fw-bold">
             임시 보관함
           </div>
@@ -75,11 +82,15 @@
         </li>
       </ol>
       <ol class="list-group list-group-item mb-5 border-0">
-        <li class="list-group-item d-flex justify-content-between align-items-start border-0 mail-hover rounded-3" role="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-          </svg>  
+        <li class="list-group-item d-flex justify-content-between align-items-start border-0 mail-hover rounded-3"
+          role="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-trash"
+            viewBox="0 0 16 16">
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+            <path
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+          </svg>
           <div class="ms-3 me-auto fw-bold">
             휴지통
           </div>
@@ -97,8 +108,10 @@
         <div class="d-flex align-items-center gap-2">
           <button class="border border-dark px-3 py-1 rounded-2 bg-white border-1">
             <div class="d-flex flex-row gap-3 align-items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
-                <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send"
+                viewBox="0 0 16 16">
+                <path
+                  d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
               </svg>
               <div>
                 보내기
@@ -134,11 +147,117 @@
           <input type="text" class="border-top-0 border-start-0 border-end-0">
         </div>
       </div>
+      <div class="mail-info-section d-flex align-items-center gap-3 mt-3">
+        <div class="pe-5">
+          참조
+        </div>
+        <div class="attached-person flex-fill">
+          <input type="text" class="border-top-0 border-start-0 border-end-0">
+        </div>
+      </div>
+      <div class="mail-info-section d-flex align-items-center gap-3 mt-3">
+        <div class="pe-3">
+          숨은 참조
+        </div>
+        <div class="attached-person flex-fill">
+          <input type="text" class="border-top-0 border-start-0 border-end-0">
+        </div>
+      </div>
+      <div class="mail-info-section d-flex align-items-center gap-3 mt-3">
+        <div class="pe-5">
+          제목
+        </div>
+        <div class="attached-person flex-fill">
+          <input type="text" class="border-top-0 border-start-0 border-end-0">
+        </div>
+      </div>
+      <div class="mail-info-section d-flex align-items-center gap-3 mt-3">
+        <div class="pe-3">
+          파일 첨부
+        </div>
+        <div class="file-upload-section d-flex align-items-center gap-2">
+          <input type="file" accept=".png" name="file" id="file">
+          <label for="file" class="file-upload-btn border border-dark border-1 px-3 py-1 rounded-2" role="button">
+            내 PC
+          </label>
+          <button id="btnCan1"
+            class="file-upload-btn border border-dark border-1 px-3 py-1 rounded-2 text-white bg-dark">초기화</button>
+        </div>
+      </div>
+      <div class="image-preview">
+        <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
+      </div>
+      <div class="image-drop-container d-flex align-items-center gap-3 mt-3">
+        <div id="drop-area" class="flex-fill">
+          <p id="image-title-p">이미지를 드래그 앤 드롭 하거나 클릭하여 업로드하세요.</p>
+          <input type="file" id="file-input" accept="image/*" style="display: none;">
+          <img id="image-preview" src="" alt="업로드된 이미지">
+        </div>
+      </div>
+      <div class="mail-info-section d-flex align-items-center gap-3 mt-3">
+        <div id="editor" class="flex-fill"></div>
+      </div>
     </div>
 
   </div>
 
   <script>
+    const dropArea = document.getElementById("drop-area");
+    const fileInput = document.getElementById("file-input");
+    const imagePreview = document.getElementById("image-preview");
+
+    const imageTitle = document.getElementById("image-title-p");
+
+    const editor = new toastui.Editor({
+      el: document.querySelector('#editor'),
+      height: '500px',
+      initialEditType: 'markdown',
+      previewStyle: 'vertical'
+    });
+
+    // 드래그 앤 드롭 이벤트 처리
+    dropArea.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropArea.style.backgroundColor = "#eee";
+    });
+
+    dropArea.addEventListener("dragleave", () => {
+      dropArea.style.backgroundColor = "#fff";
+    });
+
+    dropArea.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropArea.style.backgroundColor = "#fff";
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith("image")) {
+        displayImage(file);
+      }
+    });
+
+    // 파일 입력 필드 변경 이벤트 처리
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (file && file.type.startsWith("image")) {
+        displayImage(file);
+      }
+    });
+
+    // 클릭 이벤트 처리
+    dropArea.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    // 이미지 표시 함수
+    function displayImage(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        imagePreview.src = reader.result;
+        imagePreview.style.display = "block";
+        imageTitle.style.display = "hidden";
+      };
+      reader.readAsDataURL(file);
+    }
+
     
   </script>
 </body>
