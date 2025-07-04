@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/layout}">
+<section layout:fragment="content">
+  <link rel="stylesheet" th:href="@{/assets/css/admin/adminUserInsert.css}">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <div class="main-container">
+    <div class="main-first-section">
+      <div class="main-small-title">사용자 관리</div>
+      <button class="border border-dark px-4 py-2 rounded-2 bg-primary text-white border-0" type="submit">등록</button>
+      <!-- 부트스트랩 사용 -->
+    </div>
+    <div class="main-header-title">사용자 등록</div>
+    <form id="userForm" role="form" action="AdminUserIns" method="post" enctype="multipart/form-data">
+      <div class="admin-user-sections">
+        <div class="left-admin-user-info">
+          <div class="user-info-title">기본 정보</div>
+          <div class="user-info-personal">
+            <div class="user-info-detail">
+              <span>아이디</span> <input type="text" name="" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail">
+              <span>비밀번호</span> <input type="password" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail">
+              <span>이름</span> <input type="text" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail-img">
+              <span>사진</span>
+              <div class="input-container">
+                <div class="file-upload-box">
+                  <div class="file-upload-section">
+                    <input type="file" accept=".png" name="pfile" id="pfile">
+                    <label for="pfile">
+                      <!--프로필 파일-->
+                      <!-- <img src="/images/account_circle.png" class="cursor-pointer pImage" id="ppreviewImage" style="width: 130px; height: 100px;" alt="사용자 사진"> -->
+                      <img src="assets/images/icon/account_circle.svg" class="cursor-pointer pImage" id="ppreviewImage"
+                        style="width: 130px; height: 100px;" alt="사용자 사진">
+                    </label>
+                    <div class="image-preview">
+                      <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
+                    </div>
+                    <button id="btnCan1" class="!border !rounded-sm !cursor-pointer">초기화</button>
+                  </div>
+                  <p>* 파일 지원 형식 : png</p>
+                </div>
+              </div>
+            </div>
+            <div class="user-info-detail-img">
+              <span>결재</span>
+              <div class="input-container">
+                <div class="file-upload-box">
+                  <div class="file-upload-section">
+                    <input type="file" accept=".png" name="sfile" id="sfile">
+                    <label for="sfile">
+                      <!--결재 파일--> <img src="assets/images/icon/Input_Inner.png" class="cursor-pointer sImage"
+                        id="spreviewImage" style="width: 130px; height: 110px;" alt="사용자 결재 사진">
+                    </label>
+                    <div class="image-preview">
+                      <!--<img id="previewImage" src="#" alt="이미지 미리보기" style="display: none;">-->
+                    </div>
+                    <button id="btnCan2" class="!border !rounded-sm !cursor-pointer">초기화</button>
+                  </div>
+                  <p>* 파일 지원 형식 : png</p>
+                </div>
+              </div>
+            </div>
+            <div class="user-info-detail">
+              <span>생년월일</span> <input type="date" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail">
+              <span>주소</span> <input type="text" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail">
+              <span>연락처</span> <input type="tel" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="user-info-detail">
+              <span>이메일</span> <input type="email" class="!border !border-gray-400 !rounded-sm">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Default radio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Default checked radio
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="right-admin-user-info">
+          <div class="user-info-title">조직 정보</div>
+          <div class="user-info-personal">
+            <div class="user-info-detail">
+              <div class="user-info-detail">
+                <span>소속</span>
+                <button id="btnIns" class="!border !rounded-sm !cursor-pointer">+</button>
+                <input type="text" class="!border !border-gray-400 !rounded-sm !text-gray-500" placeholder="소속을 선택해주세요."
+                  id="selectedDepartment" readonly>
+              </div>
+              <div class="user-info-detail">
+                <span>직급</span>
+                <select name="rank" class="!border !border-gray-400 !rounded-sm" id="selectposition">
+                  <option value="" selected>직급을 선택해주세요.</option>
+                  <option th:each="position : ${posi}" th:value="${position?.positionId}"
+                    th:text="${position?.positionName}"></option>
+                </select>
+              </div>
+              <div class="user-info-detail">
+                <span>사번</span>
+                <input type="text" class="!border !border-gray-400 !rounded-sm">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 소속 추가 모달 -->
+  <!-- 배경 -->
+  <div class="fixed inset-0 bg-transparent flex items-center justify-center z-50 hidden modal-title" id="modal">
+    <!-- 모달 본체 -->
+    <div class="!border !rounded-sm !bg-white modal-padding !shadow-lg !max-w-2xl !w-full">
+      <div class="!flex !justify-between !items-center !mb-6">
+        <h2 class="!text-xl !font-bold">소속 선택</h2>
+        <div class="!text-xl !cursor-pointer" id="modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="flex gap-2 mb-6">
+        <input type="text" class="!flex-1 !border !border-gray-300 !rounded-sm !px-3 !py-2" placeholder="검색"
+          id="search-input">
+        <button class="!px-3 !py-2 !cursor-pointer" id="modal-search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="!border !border-gray-300 !rounded-sm p-4 mb-6 min-h-[200px]">
+        <ul class="!space-y-2" id="department-list">
+          <!-- <li class="!p-2 !hover:bg-gray-300 !cursor-pointer !rounded" data-dept="임원">• 임원</li> -->
+        </ul>
+      </div>
+
+      <div class="flex justify-end gap-2">
+        <button class="!bg-black !text-white !px-6 !py-2 !rounded !cursor-pointer !hover:bg-gray-800"
+          id="BtnConfirm">선택</button>
+        <button
+          class="!bg-white !text-black !border !border-gray-300 !px-6 !py-2 !rounded !cursor-pointer !hover:bg-gray-50"
+          id="BtnCan">취소</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-modal">
+    <div class="alert-modal-info">
+      <div class="!pb-7 !text-xl">소속을 다시 선택해주세요.</div>
+      <button type="button"
+        class="!bg-black !text-white !px-6 !py-2 !rounded !cursor-pointer !hover:bg-gray-800 !text-base btnOK">확인</button>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("modal"); // 모달 전체
+    const btnConfirm = document.getElementById("BtnConfirm"); // 모달 선택버튼
+    const btnCan = document.getElementById("BtnCan"); // 모달 취소버튼
+    const btnIns = document.getElementById("btnIns"); // 모달 열기버튼 (+)
+    const modalClose = document.getElementById("modal-close"); // 모달 닫기버튼 (X)
+    const searchInput = document.getElementById("search-input"); // 검색 입력창
+    const departmentList = document.getElementById("department-list"); // 소속 목록
+    const selectedDepartment = document.getElementById("selectedDepartment"); // 선택된 소속 표시창
+    const alertModal = document.querySelector(".alert-modal");
+    const btnOK = document.querySelector(".btnOK");
+    const btnCan1 = document.getElementById("btnCan1");
+    const btnCan2 = document.getElementById("btnCan2");
+    const selectPosition = document.getElementById("selectposition");
+
+
+    const departments = [
+      "임원",
+      "인사팀",
+      "재무팀",
+      "개발팀",
+      "품질보증팀",
+      "기획팀",
+      "영업팀"
+    ];
+
+    let currentSelectedDepartment = "";
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      const deptItems = departmentList.querySelectorAll("div[data-dept]");
+      deptItems.forEach(item => {
+        item.classList.remove("bg-blue-300");
+      });
+      currentSelectedDepartment = "";
+      $('#department-list').children().remove();
+    }
+
+    modalClose.addEventListener("click", closeModal);
+    btnCan.addEventListener("click", closeModal);
+
+    btnIns.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      $.ajax("deptlist")
+        .then((datas) => {
+          datas.forEach(e => {
+            $('#department-list').append(
+              `<li class="!p-2 !hover:bg-gray-300 !cursor-pointer !rounded" data-dept="${e.departmentsId}">${e.departmentsName}</li>`
+            )
+          })
+        })
+
+    })
+
+    // 모달에서 부서를 클릭했을 때
+    departmentList.addEventListener("click", (e) => {
+      const deptItems = e.target.closest("[data-dept]");
+      if (deptItems) {
+        const prevSelected = departmentList.querySelector(".bg-blue-300");
+        if (prevSelected) {
+          prevSelected.classList.remove("bg-blue-300");
+        }
+
+        deptItems.classList.add("bg-blue-300");
+        // currentSelectedDepartment = deptItems.getAttribute("data-dept");
+      }
+    })
+
+    // 모달에서 선택버튼을 클릭 시
+    btnConfirm.addEventListener("click", () => {
+      const prevSelected = departmentList.querySelector(".bg-blue-300");
+      if (prevSelected) {
+        selectedDepartment.value = prevSelected.innerHTML;
+        selectedDepartment.setAttribute("data-dept", prevSelected.getAttribute("data-dept"));
+        closeModal();
+      } else {
+        //alert("소속을 선택해주세요.");
+        alertModal.style.display = 'block';
+      }
+    })
+
+    btnOK.addEventListener("click", () => {
+      alertModal.style.display = 'none';
+    })
+
+    function searchDepartments() {
+
+      const searchTerm = searchInput.value.toLowerCase().trim();
+
+      if (searchTerm === "") {
+        showAllDepartments();
+        return;
+      }
+
+      const filterdDepts = departments.filter(dept =>
+        dept.toLowerCase().includes(searchTerm)
+      );
+
+      displayDepartments(filterdDepts);
+
+    }
+
+    function showAllDepartments() {
+      displayDepartments(departments);
+    }
+
+    function displayDepartments(deptList) {
+      departmentList.innerHTML = "";
+
+      deptList.forEach(dept => {
+        const li = document.createElement("li");
+        li.className = "p-2 hover:bg-gray-300 cursor-pointer rounded";
+        li.setAttribute("data-dept", dept);
+        li.textContent = `${dept}`;
+        departmentList.appendChild(li);
+      });
+    }
+
+    /*     selectPosition.addEventListener("click", () => {
+    	   	$.ajax("deptpos")
+    	       .then((datas) => {
+    	         datas.forEach(e => {
+    	           $('#selectposition').append(
+    	             `<option value="${e.positionId}">${e.positionName}</option>`
+    	             )
+    	         })
+    	       })
+        }) */
+
+    searchInput.addEventListener("input", searchDepartments);
+    document.getElementById("modal-search").addEventListener("click", searchDepartments);
+
+    const pimageFile = document.getElementById('pfile'); // 프로필 사진 이미지 라벨
+    const simageFile = document.getElementById('sfile'); // 결재 사진 이미지 라벨
+    const pimagePreview = document.getElementById('ppreviewImage'); // 프로필 사진 미리보기
+    const simagePreview = document.getElementById('spreviewImage'); // 결재 사진 미리보기
+    const pImage = document.querySelector(".pImage");
+    const sImage = document.querySelector(".sImage");
+    const bi = document.querySelector(".bi");
+
+    // 각 사진 이미지 미리보기
+    pimageFile.addEventListener('change', function (event) {
+      const file1 = event.target.files[0];
+
+      if (file1) {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          pimagePreview.src = e.target.result;
+          pimagePreview.style.display = 'block';
+        }
+
+        reader.readAsDataURL(file1);
+      } else {
+        pimagePreview.style.display = 'none';
+      }
+    })
+
+    simageFile.addEventListener('change', function (event) {
+      const file2 = event.target.files[0];
+
+      if (file2) {
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          simagePreview.src = e.target.result;
+          simagePreview.style.display = 'block';
+        }
+
+        reader.readAsDataURL(file2);
+      } else {
+        simagePreview.style.display = 'none';
+      }
+    })
+
+    // 프로필 사진, 결재 이미지 초기화 버튼
+    btnCan1.addEventListener("click", () => {
+
+      pImage.src = "assets/images/icon/account_circle.svg";
+
+    })
+
+    btnCan2.addEventListener("click", () => {
+
+      sImage.src = "assets/images/icon/Input_Inner.png";
+
+    })
+  </script>
+</section>
+
+</html>

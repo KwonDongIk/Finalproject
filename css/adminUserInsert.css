@@ -121,6 +121,18 @@ body {
   border:0;
 }
 
+.user-info-detail-radio{
+  margin-left: auto;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-info-detail-radio input[type="radio"]{
+  width: 30px;
+  margin-left: 20px;
+}
+
 .file-upload-box{
   width: 200px;
   height: 130px;
